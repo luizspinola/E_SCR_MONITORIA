@@ -7,7 +7,7 @@
 
 # Mudanças necessárias
 🧠 Para realizar o controle de um secador de cabelo convencional, foi necessário realizar alterações em aspectos básicos do projeto atual, que consiste em controlar o fluxo de ar e temperatura atráves de controle de potência de, respectivamente, um cooler e uma resistência de chuveiro (ou lâmpada) via PWM.
-O primeiro aspecto que deve ser pensado e, intuitivamente já se supõe, é sobre a alimentação do sistema. No projeto original, todas as fontes de alimentação são DC. Se resumem a alimentação proveniente do prórpio microcontrolador
+O primeiro aspecto que deve ser pensado e, intuitivamente já se supõe, é sobre a alimentação do sistema. No projeto original, todas as fontes de alimentação são DC. Se resumem a alimentação proveniente do prórpio microcontrolador e das fontes de bancada do laboratório. Um secador de cabelo é um item utilizado comumente em tomadas, assim, decidimos alimentá-lo com 
 
 
 
