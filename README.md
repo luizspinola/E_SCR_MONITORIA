@@ -13,7 +13,17 @@ O primeiro aspecto que deve ser pensado e, intuitivamente já se supõe, é sobr
 
 Foram impressos um bocal, para conectar a saída de ar ao sensor de fluxo de ar, além de possuir um furo para que o sensor de temperatura seja inserido. Além disso, imprimiu-se uma base para que o secador ficasse em pé (as peças modeladas no Fusion podem ser encontradas na pasta CAD deste repositório).
 
+# Desenvolvimento do projeto eletrônico
 
+Diante das mudanças dos requerimentos do projeto, o esquemático abaixo foi desenvolvido, e verificado em _protoboard_ antes da confecção da PCB.
+
+<p align="center">
+  <img src="https://github.com/luizspinola/E_SCR_MONITORIA/blob/5854220135213a4ee05ba36546c0e48b903f04f7/images/Schematic_Secador_Scr.png" alt="secador">
+</p>
+
+Vamos por partes. O primeiro elemento a ser exposto são as cargas as quais devemos controlar a potência, isto é, precisamos realizar o controle de tensão sobre o motor do secador de cabelo (diretamente proporcional ao volume de ar que pode ser gerado) e sua resistência (diretamente proporcional a temperatura que o sistema pode atingir). A resistência não pode **sob hipótese nenhuma**, ser ligada quando o motor estiver desligado. Ao fazer isso, retira-se o principal e único dispositivo capaz de resfriar o secador de cabelo de maneira eficaz, podendo acometer na queima da resistência e perda deste componente.
+
+Dessa forma, o desenvolvimento do esquemático foi dedicado a desenvolver uma placa que impeça a conexão e comunicação entre as malhas responsáveis pela alimentação destas cargas (maior potência) e pelo controle das mesmas cargas (menor potência), utilizando de componentes para isolar e separar o máximo possível estas fontes de tensão.
 
 
 
