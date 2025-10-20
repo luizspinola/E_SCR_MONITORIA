@@ -25,5 +25,17 @@ Vamos por partes. O primeiro elemento a ser exposto são as cargas as quais deve
 
 Dessa forma, o desenvolvimento do esquemático foi dedicado a desenvolver uma placa que impeça a conexão e comunicação entre as malhas responsáveis pela alimentação destas cargas (maior potência) e pelo controle das mesmas cargas (menor potência), utilizando de componentes para isolar e separar o máximo possível estas fontes de tensão.
 
+Note que, em basicamente cada zona do esquemático, temos duas cópias de um mesmo circuito, cada uma referente a cada uma das cargas que devemos controlar (motor e resistência do secador). A explicação de cada estágio do circuito vale para as duas cargas.
+
+Primeiramente, antes de explicarmos os estágios do circuito de controle, é necessário deixar claro o que é necessário para construir um sistema de controle. Em suma, um elemento físico precisa de um dispositivo capaz de regular sua potência a partir de um certo acionamento. Em um carro, a velocidade é regulada pelo quanto de combustível é permitido acessar o motor, a partir do acionamento de uma válvula conectada aos cilindros de potência do carro. De forma que quando o carro está abaixo da velocidade, há um fluxo de óleo no cilindro de tal forma que a válvula suba e permita a passagem de um maior volume de combustível, aumentando a valocidade real (a recíproca é verdadeira). No caso de sistemas eletrônicos (como é o nosso), o combustível do motor pode ser tanto uma tensão quanto corrente elétrica aplicada, e cabe a nós encontrar ferramentas que permitam diminuir ou aumentar o fornecimento de combustível a partir de um acionamento. 
+
+## Estágio 1: Optoacopladores
+
+<p align="center">
+  <img src="https://github.com/luizspinola/E_SCR_MONITORIA/blob/76f16076b71ec76a1ff509dff280be8ef9a71f41/images/opto.png" alt="opto">
+</p>
+
+
+
 
 
