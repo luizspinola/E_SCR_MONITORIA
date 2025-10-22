@@ -1,6 +1,7 @@
 # PROJETO DE MONITORIA DE EXPERIMENTAL DE SISTEMAS DE CONTROLE REALIMENTADO
 
 🧠: Texto escrito sem o auxílio de inteligência artificial
+
 🤖: Texto escrito com o auxílio de inteligência artificial
 
 ## OBJETIVO: Realizar o controle de temperatura e vazão de ar de um secador de cabelo convencional.
