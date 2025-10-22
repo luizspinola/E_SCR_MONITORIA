@@ -1,9 +1,12 @@
 # PROJETO DE MONITORIA DE EXPERIMENTAL DE SISTEMAS DE CONTROLE REALIMENTADO
 
+🧠: Texto escrito sem o auxílio de inteligência artificial
+🤖: Texto escrito com o auxílio de inteligência artificial
+
 ## OBJETIVO: Realizar o controle de temperatura e vazão de ar de um secador de cabelo convencional.
 
 # Mudanças necessárias
-Para realizar o controle de um secador de cabelo convencional, foi necessário realizar alterações em aspectos básicos do projeto atual, que consiste em controlar o fluxo de ar e temperatura atráves de controle de potência de, respectivamente, um cooler e uma resistência de chuveiro (ou lâmpada) via PWM.
+🧠 Para realizar o controle de um secador de cabelo convencional, foi necessário realizar alterações em aspectos básicos do projeto atual, que consiste em controlar o fluxo de ar e temperatura atráves de controle de potência de, respectivamente, um cooler e uma resistência de chuveiro (ou lâmpada) via PWM.
 
 O primeiro aspecto que deve ser pensado e, intuitivamente já se supõe, é sobre a alimentação do sistema. No projeto original, todas as fontes de alimentação são DC. Se resumem a alimentação proveniente do prórpio microcontrolador e das fontes de bancada do laboratório. Um secador de cabelo é um item utilizado comumente em tomadas, assim, decidimos alimentá-lo a partir da própria tomada (uma decisaão que futuramente foi repensada). O outro aspecto a ser pensado é a modelagem e a manufatura de estruturas para acoplar os sensores ao secador, como mostra a figura abaixo.
 
@@ -15,7 +18,7 @@ Foram impressos um bocal, para conectar a saída de ar ao sensor de fluxo de ar,
 
 # Desenvolvimento do projeto eletrônico
 
-Diante das mudanças dos requerimentos do projeto, o esquemático abaixo foi desenvolvido, e verificado em _protoboard_ antes da confecção da PCB.
+🧠 Diante das mudanças dos requerimentos do projeto, o esquemático abaixo foi desenvolvido, e verificado em _protoboard_ antes da confecção da PCB.
 
 <p align="center">
   <img src="https://github.com/luizspinola/E_SCR_MONITORIA/blob/5854220135213a4ee05ba36546c0e48b903f04f7/images/Schematic_Secador_Scr.png" alt="secador">
@@ -37,7 +40,10 @@ Primeiramente, antes de explicarmos os estágios do circuito de controle, é nec
   <img src="https://github.com/luizspinola/E_SCR_MONITORIA/blob/76f16076b71ec76a1ff509dff280be8ef9a71f41/images/opto.png" alt="opto">
 </p>
 
+🤖 O optoacoplador é usado para isolar eletricamente dois circuitos, permitindo a transferência de sinais entre eles sem contato elétrico direto. O funcionamento baseia-se na conversão de um sinal elétrico em luz e, em seguida, novamente em um sinal elétrico. Internamente, o PC817A possui um LED emissor de infravermelho e um fototransistor. Quando uma corrente flui entre os pinos 1 (ânodo) e 2 (cátodo), o LED emite luz infravermelha. Essa luz incide sobre a base do fototransistor interno, que está entre os pinos 3 (emissor) e 4 (coletor). Assim, quando o LED está aceso, o fototransistor conduz, permitindo a passagem de corrente entre seus terminais. Quando o LED está apagado, o fototransistor permanece em corte, bloqueando o sinal.
 
+🧠 A natureza do nosso sistema já explica por si só por que este componente é necessário, podemos separar o nosso esquemático em duas malhas de magnitudes distintas, uma malha de potência, em que a principal fonte de tensão é a tomada (AC) de 127V, e uma malha de controle, em que as principais fontes são a fonte de bancada, de 12V DC, além dos 3.3V fornecidos ao microcontrolador pela porta USB do _notebook_. Para evitar que tanto o microcontrolador, amplificador operacional, sensores e o _notebook_ sofram uma sobretensão que possa estragar estes componentes, é necessário isolar eletricamente estas malhas. 
 
+## Fonte Isolada
 
 
