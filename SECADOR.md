@@ -73,6 +73,14 @@ A alimentação, exposta na última seção, possui um elemento que deve ser cit
 
 ## Por que deu errado?
 
+Ao iniciar os testes, percebeu se que, mesmo ao alterar o _duty cycle_ do sinal PWM, a variação de potência era imperceptível, mesmo diminuindo a frequência do pwm a uma múltipla dos 60Hz da rede. Após realizar testes com uma alimentação DC, ao invés de AC, percebemos que o erro se deu por conta de não nos atentarmos as propriedades físicas do próprio motor. Podemos ver isto na imagem abaixo. 
+
+<p align="center">
+  <img src="https://github.com/luizspinola/E_SCR_MONITORIA/blob/021dcd678d85bbc38f24f4492fdb3074aedcd483/images/erro.png" alt="erro">
+</p>
+
+O sinal de saída esperado na carga (em verde) deveria ser o mais próximo de uma réplica do sinal de entrada quando o nível lógico do PWM fosse alto. Isso seria verdadeiro caso estivéssemos lidando com uma carga puramente resistiva. Todavia, como já sabemos, motores de corrente alternada não são cargas puramente resistivas. Pelo contrário, seu princípio de funcionamento se sustenta pelo fato de seu material possuir reatâncias capacitivas e indutivas. Dessa maneira, a tensão no motor não atinge seu valor máximo e mínimo de imediato no instante de mudança de nível lógico do PWM, mas sim, aumenta e diminui em uma progressão exponencial (assim como o carregamento e descarregamento de um capacitor, por exemplo). Ou seja, na frequência trabalhada, "não dava tempo" para que a tensão no motor atingisse seu valor máximo e mínimo antes que sua alimentação fosse modificada, independente do ciclo de trabalho do PWM, assim, mantendo uma potência quase constante.  
+
 
 
 
