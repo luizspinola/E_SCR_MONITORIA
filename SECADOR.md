@@ -61,4 +61,10 @@ Primeiramente, antes de explicarmos os estágios do circuito de controle, é nec
   <img src="https://github.com/luizspinola/E_SCR_MONITORIA/blob/8b4d0cf5edfb41e455b89dd79b8a1ae3c9ea84aa/images/mosfet.png" alt="mosfet">
 </p>
 
+Este circuito funciona da mesma maneira como foi explicado no parágrafo antes do estágio 1. A alimentação de meia onda alternada da tomada só é fornecida a carga (motor do secador) quando o _gate_ do mosfet for acionado. Em tese, essa configuração permitiria o controle de potência, porém, não foi o que aconteceu.
+
+## Por que deu errado?
+
+
+
 
