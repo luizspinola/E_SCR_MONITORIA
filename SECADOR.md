@@ -45,6 +45,14 @@ Primeiramente, antes de explicarmos os estágios do circuito de controle, é nec
 
 🧠 A natureza do nosso sistema já explica por si só por que este componente é necessário, podemos separar o nosso esquemático em duas malhas de magnitudes distintas, uma malha de potência, em que a principal fonte de tensão é a tomada (AC) de 127V, e uma malha de controle, em que as principais fontes são a fonte de bancada, de 12V DC, além dos 3.3V fornecidos ao microcontrolador pela porta USB do _notebook_. Para evitar que tanto o microcontrolador, amplificador operacional, sensores e o _notebook_ sofram uma sobretensão que possa estragar estes componentes, é necessário isolar eletricamente estas malhas. 
 
+## Alimentação e Fonte Isolada
+
+<p align="center">
+  <img src="https://github.com/luizspinola/E_SCR_MONITORIA/blob/00c682b61cbbdcfb7eab54666a1082dce40f28de/images/alimentacao.png" alt="fonte">
+</p>
+
+A alimentação, exposta na última seção, possui um elemento que deve ser citado: A fonte isolada. Para que o acionamento e por consquência, o controle, funcione, tanto a malha de controle quanto a malha de potência precisam estar sobre a mesma referência. A mesma precaução que explica o uso do optoacoplador também justifica o motivo de não conectar os terras das duas malhas. Por isso, o componente U4, é responsável por deixar ambas malhas na mesma referência.
+
 ## Estágio 2: Push-Pulls
 
 <p align="center">
@@ -61,7 +69,7 @@ Primeiramente, antes de explicarmos os estágios do circuito de controle, é nec
   <img src="https://github.com/luizspinola/E_SCR_MONITORIA/blob/8b4d0cf5edfb41e455b89dd79b8a1ae3c9ea84aa/images/mosfet.png" alt="mosfet">
 </p>
 
-Este circuito funciona da mesma maneira como foi explicado no parágrafo antes do estágio 1. A alimentação de meia onda alternada da tomada só é fornecida a carga (motor do secador) quando o _gate_ do mosfet for acionado. Em tese, essa configuração permitiria o controle de potência, porém, não foi o que aconteceu.
+🧠 Este circuito funciona da mesma maneira como foi explicado no parágrafo antes do estágio 1. A alimentação de meia onda alternada da tomada só é fornecida a carga (motor do secador) quando o _gate_ do mosfet for acionado. Em tese, essa configuração permitiria o controle de potência, porém, não foi o que aconteceu.
 
 ## Por que deu errado?
 
