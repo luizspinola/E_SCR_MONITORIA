@@ -45,6 +45,20 @@ Primeiramente, antes de explicarmos os estágios do circuito de controle, é nec
 
 🧠 A natureza do nosso sistema já explica por si só por que este componente é necessário, podemos separar o nosso esquemático em duas malhas de magnitudes distintas, uma malha de potência, em que a principal fonte de tensão é a tomada (AC) de 127V, e uma malha de controle, em que as principais fontes são a fonte de bancada, de 12V DC, além dos 3.3V fornecidos ao microcontrolador pela porta USB do _notebook_. Para evitar que tanto o microcontrolador, amplificador operacional, sensores e o _notebook_ sofram uma sobretensão que possa estragar estes componentes, é necessário isolar eletricamente estas malhas. 
 
-## Fonte Isolada
+## Estágio 2: Push-Pulls
+
+<p align="center">
+  <img src="https://github.com/luizspinola/E_SCR_MONITORIA/blob/8b4d0cf5edfb41e455b89dd79b8a1ae3c9ea84aa/images/push_pull.png" alt="push">
+</p>
+
+🤖🧠 O circuito push-pull opera como um driver de corrente de alta eficiência, utilizando um par de transistores complementares (NPN Q1 e PNP Q2) conectados de forma que suas bases sejam controladas por um sinal de entrada único e seus emissores estejam ligados à saída. Este circuito permite o fornecimento e absorção de corrente ativamente, resultando em uma comutação rápida da tensão de saída entre as fontes de alimentação, sendo ideal para acionar cargas que requerem alta corrente, como a porta de um MOSFET (como é o nosso caso).
+
+🧠 Após a amplificação da corrente de saída do optoacoplador, este sinal vai para a porção do circuito que realmente controla o motor do secador.
+
+## Estágio 3: MOSFET
+
+<p align="center">
+  <img src="https://github.com/luizspinola/E_SCR_MONITORIA/blob/8b4d0cf5edfb41e455b89dd79b8a1ae3c9ea84aa/images/mosfet.png" alt="mosfet">
+</p>
 
 
